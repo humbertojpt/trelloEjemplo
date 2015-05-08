@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
 	belongs_to :user
-	obfuscate_id
+	validates :description, presence: true
+	validates :title, presence: true
+	validates :duration, :numericality => {:only_float => true}
 end
