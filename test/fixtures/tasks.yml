@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  duration: 1.5
+  start_date: 2015-05-08
+  finish_date: 2015-05-08
+  user_id: 1
+  finished: false
+
+two:
+  title: MyString
+  description: MyText
+  duration: 1.5
+  start_date: 2015-05-08
+  finish_date: 2015-05-08
+  user_id: 1
+  finished: false
