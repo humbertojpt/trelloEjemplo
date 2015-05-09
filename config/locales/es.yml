@@ -1,5 +1,10 @@
 es:
-	Sign Up: "Registrarse"
+
+  User: "Usuario"
+  Task: "Tarea"
+  Sign in: "Iniciar Sesión"
+  Sign Up: "Registrarse"
+  Sign Out: "Cerrar Sesión"
   date:
     abbr_day_names:
     - dom

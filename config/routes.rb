@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  scope"(:locale)", locale: /es|en/ do
   resources :tasks
   resources :users
+end
 
   root 'tasks#index'
   # The priority is based upon order of creation: first created -> highest priority.
