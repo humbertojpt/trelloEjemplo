@@ -4,9 +4,12 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.order("duration")
+    @tasks = Task.order("finish_date")
   end
 
+  def mytask
+    @tasks = Task.all.order(finish_date: :asc)
+  end
   # GET /tasks/1
   # GET /tasks/1.json
   def show

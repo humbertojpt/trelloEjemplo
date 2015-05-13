@@ -35,7 +35,7 @@
 
 <p>
   <strong>Responsable:</strong>
-  <%= @task.user.fullname %>
+  <%= find_responsable(@task.responsable) %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task), class:"button" %> |

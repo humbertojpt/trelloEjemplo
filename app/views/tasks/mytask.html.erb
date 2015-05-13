@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My task</title>
+</head>
+<body>
+<div class="row">
+
+  <div class="large-6 columns">
+  <h2>Created</h2>
+    <fieldset>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Dur</th>
+            <th>Start</th>
+            <th>Finish</th>
+            <th>Done</th>
+            <th>Responsable</th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @tasks.each do |task| %>
+          <% if task.user_id == current_user.id %>
+            <tr>
+              <td><%= task.title %></td>
+              <td><%= task.duration %></td>
+              <td><%= task.start_date %></td>
+              <td><%= task.finish_date %></td>
+              <td><%= task.finished %></td>
+              <td><%= task.user.fullname %></td>
+              <td><%= link_to 'Show', task %></td>
+              <td><%= link_to 'Edit', edit_task_path(task) %></td>
+              <td><%= link_to 'Del', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+
+  <div class="large-6 columns">
+    <h2>Responsable Task</h2>
+    <fieldset>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Dur</th>
+            <th>Start</th>
+            <th>Finish</th>
+            <th>User</th>
+            <th>Done</th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @tasks.each do |task| %>
+          <% if task.responsable == current_user.id %>
+            <tr>
+              <td><%= task.title %></td>
+              <td><%= task.duration %></td>
+              <td><%= task.start_date %></td>
+              <td><%= task.finish_date %></td>
+              <td><%= task.user.fullname %></td>
+              <td><%= task.finished %></td>
+              <td><%= link_to 'Show', task %></td>
+              <td><%= link_to 'Edit', edit_task_path(task) %></td>
+              <td><%= link_to 'Del', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+
+</div>
+	
+</body>
+</html>

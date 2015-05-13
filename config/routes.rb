@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   scope"(:locale)", locale: /es|en/ do
   resources :tasks
   resources :users
+  
 end
 
+  get '/tasks/:id/mytask' => 'tasks#mytask', as: 'mytask'
   root 'tasks#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

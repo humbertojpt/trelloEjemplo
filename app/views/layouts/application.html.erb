@@ -33,7 +33,7 @@
 			          <li>
 			            <%= link_to current_user.username, edit_user_registration_path %>
 			          </li>
-			          <li>
+			          <li class="active">
 			            <%= link_to t('Sign Out'), destroy_user_session_path, method: :delete %>
 			          </li>
 	          	<% else %>
@@ -47,10 +47,13 @@
 		    </ul>
 
 		    <!-- Left Nav Section -->
-		    <ul class="left">
-		      <li><%= link_to t('User'), users_path %></li>
-		      <li><%= link_to t('Task'), tasks_path %></li>
-		    </ul>
+		   <ul class="left">
+          <li><%= link_to t('User'), users_path %></li>
+          <li><%= link_to t('Task'), tasks_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to t('My tasks'), mytask_path(current_user) %></li>
+          <% end %>
+        </ul>
 		  </section>
 		</nav>
 	
