@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150508195158) do
     t.date     "finish_date"
     t.integer  "user_id"
     t.boolean  "finished"
+    t.integer  "responsable"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -35,6 +35,10 @@
     <%= f.label :finished %><br>
     <%= f.check_box :finished %>
   </div>
+  <div class="field">
+    <%= f.label :responsable %><br>
+    <%= f.select :responsable, options_for_select(@users) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

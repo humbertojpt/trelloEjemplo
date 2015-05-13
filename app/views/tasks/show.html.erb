@@ -33,5 +33,10 @@
   <%= @task.finished %>
 </p>
 
+<p>
+  <strong>Responsable:</strong>
+  <%= @task.user.fullname %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task), class:"button" %> |
 <%= link_to 'Back', tasks_path, class:"button" %>
